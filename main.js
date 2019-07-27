@@ -7,14 +7,15 @@ function isNaturalNumber (vall) {
 	return pattern.test(vall);	
 }
 
-if(isNaturalNumber(vall)){ 
+if(isNaturalNumber(vall)) { 
 	getColor();
- }else{
+ }
+else {
 	alert ("Введите натуральное число!!!");
 	location.reload();
  }
 
-function getColor(){
+function getColor() {
 	var val = parseInt(vall);
 	r = r + val;
 	g = g + val;
