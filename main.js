@@ -1,29 +1,30 @@
-block1.onmouseover = block1.onmouseout = handler;
+let r=1, g=1, b=1, vall;
 
-function handler(event) {
+vall = prompt("Введите натуральное число");
 
-  if (event.type == 'mouseover' && event.target.id == 'block1') {
-    event.target.style.background = 'blue'
-  }
-   if (event.type == 'mouseover' && event.target.id == 'block2') {
-    event.target.style.background = 'red'
-  }
+function isNaturalNumber (vall) {
+    var pattern = /^(0|([1-9]\d*))$/;
+	return pattern.test(vall);	
+}
 
-   if (event.type == 'mouseover' && event.target.classList.contains("block3")) {
-      var block3_1 = document.querySelector("#block3_1");
-      var block3_2 = document.querySelector("#block3_2");
-      block3_1.style.background = 'purple';
-      block3_2.style.background = 'purple';
-  }
+if(isNaturalNumber(vall)){ 
+	getColor();
+ }else{
+	alert ("Введите натуральное число!!!");
+	location.reload();
+ }
 
-  if (event.type == 'mouseout') {
-    event.target.style.background = ''
-  }
-
-  if (event.type == 'mouseout' && event.target.classList.contains("block3")) {
-    var block3_1 = document.querySelector("#block3_1");
-    var block3_2 = document.querySelector("#block3_2");
-    block3_1.style.background = '';
-    block3_2.style.background = '';
-  }
+function getColor(){
+	var val = parseInt(vall);
+	r = r + val;
+	g = g + val;
+	b = b + val;
+	if (r, g, b >= 15) {
+		r = r - 4;
+		g = g - 3;
+		b = b -5;
+	}
+	var c='#' + r.toString(16) + g.toString(16) + b.toString(16);
+	alert(c);
+	document.body.style.backgroundColor = c;
 }
