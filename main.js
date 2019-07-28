@@ -1,22 +1,22 @@
 let r=1, g=1, b=1, vall;
 
-vall = prompt("Введите натуральное число");
+vall = prompt('Введите натуральное число');
 
 function isNaturalNumber (vall) {
-    var pattern = /^(0|([1-9]\d*))$/;
+    let pattern = /^(0|([1-9]\d*))$/;
 	return pattern.test(vall);	
 }
 
-if(isNaturalNumber(vall)) { 
-	getColor();
+if (isNaturalNumber(vall)) { 
+	let val = parseInt(vall);
+	getColor(val);
  }
 else {
-	alert ("Введите натуральное число!!!");
+	alert ('Введите натуральное число!!!');
 	location.reload();
  }
 
-function getColor() {
-	var val = parseInt(vall);
+function getColor(val) {
 	r = r + val;
 	g = g + val;
 	b = b + val;
@@ -25,7 +25,7 @@ function getColor() {
 		g = g - 3;
 		b = b -5;
 	}
-	var c='#' + r.toString(16) + g.toString(16) + b.toString(16);
+	let c='#' + r.toString(16) + g.toString(16) + b.toString(16);
 	alert(c);
 	document.body.style.backgroundColor = c;
 }
